@@ -2639,7 +2639,7 @@
     }
     ```
 
-7. 重新编译后，再次执行``./build/bin/toyc-ch6 -emit=mlir-llvm ./toy_mod/src/Ch6/codegen.toy -opt`可以看到，整数和浮点数的printf分别调用了不同的global constant。
+7. 重新编译后，再次执行`./build/bin/toyc-ch6 -emit=mlir-llvm ./toy_mod/src/Ch6/codegen.toy -opt`可以看到，整数和浮点数的printf分别调用了不同的global constant。
 
     ```mlir
     module {
@@ -3607,7 +3607,7 @@
 
     ```
 
-8. 执行``./build/bin/toyc-ch6 -emit=llvm ./toy_mod/src/Ch6/codegen.toy -opt`重新生成LLVM IR
+8. 执行`./build/bin/toyc-ch6 -emit=llvm ./toy_mod/src/Ch6/codegen.toy -opt`重新生成LLVM IR
 
     ```llvm
     ; ModuleID = 'LLVMDialectModule'
