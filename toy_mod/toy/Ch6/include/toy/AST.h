@@ -41,7 +41,6 @@ public:
     Expr_Num,
     Expr_Literal,
     Expr_Var,
-    // Expr_Varint,
     Expr_BinOp,
     Expr_Call,
     Expr_Print,

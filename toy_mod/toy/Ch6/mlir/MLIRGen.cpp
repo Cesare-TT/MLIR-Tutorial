@@ -120,7 +120,6 @@ private:
 
   /// Emit a new function and add it to the MLIR module.
   mlir::toy::FuncOp mlirGen(FunctionAST &funcAST) {
-
     // Create a scope in the symbol table to hold variable declarations.
     ScopedHashTableScope<llvm::StringRef, mlir::Value> varScope(symbolTable);
 
@@ -414,8 +413,6 @@ private:
       return mlirGen(cast<BinaryExprAST>(expr));
     case toy::ExprAST::Expr_Var:
       return mlirGen(cast<VariableExprAST>(expr));
-    // case toy::ExprAST::Expr_Varint:
-    //   return mlirGen(cast<VariableExprAST>(expr));
     case toy::ExprAST::Expr_Literal:
       return mlirGen(cast<LiteralExprAST>(expr));
     case toy::ExprAST::Expr_Call:
