@@ -1,0 +1,36 @@
+Module:
+  Function 
+    Proto 'multiply_transpose' @../mlir/test/Examples/Toy/Ch2/codegen.toy:4:1
+    Params: [a, b]
+    Block {
+      Return
+        BinOp: * @../mlir/test/Examples/Toy/Ch2/codegen.toy:5:25
+          Call 'transpose' [ @../mlir/test/Examples/Toy/Ch2/codegen.toy:5:10
+            var: a @../mlir/test/Examples/Toy/Ch2/codegen.toy:5:20
+          ]
+          Call 'transpose' [ @../mlir/test/Examples/Toy/Ch2/codegen.toy:5:25
+            var: b @../mlir/test/Examples/Toy/Ch2/codegen.toy:5:35
+          ]
+    } // Block
+  Function 
+    Proto 'main' @../mlir/test/Examples/Toy/Ch2/codegen.toy:8:1
+    Params: []
+    Block {
+      VarDecl a<2, 3> @../mlir/test/Examples/Toy/Ch2/codegen.toy:9:3
+        Literal: <2, 3>[ <3>[ 1.000000e+00, 2.000000e+00, 3.000000e+00], <3>[ 4.000000e+00, 5.000000e+00, 6.000000e+00]] @../mlir/test/Examples/Toy/Ch2/codegen.toy:9:17
+      VarDecl b<2, 3> @../mlir/test/Examples/Toy/Ch2/codegen.toy:10:3
+        Literal: <6>[ 1.000000e+00, 2.000000e+00, 3.000000e+00, 4.000000e+00, 5.000000e+00, 6.000000e+00] @../mlir/test/Examples/Toy/Ch2/codegen.toy:10:17
+      VarDecl c<> @../mlir/test/Examples/Toy/Ch2/codegen.toy:11:3
+        Call 'multiply_transpose' [ @../mlir/test/Examples/Toy/Ch2/codegen.toy:11:11
+          var: a @../mlir/test/Examples/Toy/Ch2/codegen.toy:11:30
+          var: b @../mlir/test/Examples/Toy/Ch2/codegen.toy:11:33
+        ]
+      VarDecl d<> @../mlir/test/Examples/Toy/Ch2/codegen.toy:12:3
+        Call 'multiply_transpose' [ @../mlir/test/Examples/Toy/Ch2/codegen.toy:12:11
+          var: b @../mlir/test/Examples/Toy/Ch2/codegen.toy:12:30
+          var: a @../mlir/test/Examples/Toy/Ch2/codegen.toy:12:33
+        ]
+      Print [ @../mlir/test/Examples/Toy/Ch2/codegen.toy:13:3
+        var: d @../mlir/test/Examples/Toy/Ch2/codegen.toy:13:9
+      ]
+    } // Block
